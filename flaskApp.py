@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-
+from forms import RegisterForm, LoginForm, PostForm
 
 app = Flask(__name__)
 
@@ -72,6 +72,11 @@ def register():
 
 @app.route("/login")
 def login():
+    pass
+
+
+@app.route("/logout")
+def logout():
     pass
 
 
