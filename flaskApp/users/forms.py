@@ -1,24 +1,9 @@
 from flask_wtf import FlaskForm
-from wtforms import SubmitField, TextAreaField, BooleanField, PasswordField, StringField
-from wtforms.validators import Length, Email, DataRequired, EqualTo,ValidationError
-from flask_login import current_user
-from flaskApp.models import User
 from flask_wtf.file import FileField,FileAllowed
-# POST
-
-
-class PostForm(FlaskForm):
-    title = StringField("title", validators=[
-        DataRequired(),
-        Length(min=3)
-    ])
-    content = TextAreaField("content", validators=[
-        DataRequired()
-    ])
-
-
-    submit = SubmitField("Create Post")
-# AUTH
+from wtforms import StringField,PasswordField,SubmitField,BooleanField
+from wtforms.validators import DataRequired,Length,Email,EqualTo,ValidationError
+from flaskApp.models import User
+from flask_login import current_user
 
 
 class RegisterForm(FlaskForm):
@@ -92,6 +77,7 @@ class UpdateUserForm(FlaskForm):
             email = User.query.filter_by(email=email.data).first()
             if email:
                 raise ValidationError("Email already exists")
+
 
 
 class Request_reset_form(FlaskForm):
