@@ -94,4 +94,23 @@ class UpdateUserForm(FlaskForm):
                 raise ValidationError("Email already exists")
 
 
+class Request_reset_form(FlaskForm):
+    email = StringField("email",validators=[
+        DataRequired(),
+        Email()
+    ])
+    submit = SubmitField("Send Email")
+
     
+class Reset_password_form(FlaskForm):
+    password = PasswordField("password", validators=[
+    DataRequired(),
+    Length(min=6)
+    ])
+    confirm_password = PasswordField("confirm password", validators=[
+        DataRequired(),
+        Length(min=6),
+        EqualTo("password")
+    ])
+
+    submit = SubmitField("Reset Password")

@@ -6,6 +6,7 @@
     <form action="" method="POST">
         {{ form.hidden_tag() }}
         <fieldset class="form-group">
+            <legend class="border-bottom mb-5">Login</legend>
             <div class="form-group">
                 {{ form.username(class="form-control") }}
                 {{ form.username.label(class="form-control-label") }}
@@ -16,10 +17,19 @@
                     {{ form.password.label(class="form-control-label") }}
                 </div>
             </div>
+        </fieldset>  
             <div class="form-group">
                 {{ form.submit(class="btn btn-outline-info") }}
             </div>
-        </fieldset>
+            <div class="text-muted ml-2">
+            <small>Forgot Password ? <a href="{{ url_for('reset_password_request') }}">Go here</a></small>
+        </div>
+        <div class="ml-2">
+            <small>Need an Account? <a href="{{ url_for('register') }}">Go here</a></small>
+        </div>
+          
+
     </form>
+
 </div>
 {% endblock %}
