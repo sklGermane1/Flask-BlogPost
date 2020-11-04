@@ -1,6 +1,6 @@
 from flask import Blueprint,render_template,redirect,url_for,request,flash,abort
 from flask_login import login_required,current_user
-from flaskApp import db,app,mail,bcrypt
+from flaskApp import db,mail,bcrypt
 from flaskApp.models import Post 
 from flaskApp.posts.forms import PostForm
 posts = Blueprint("posts",__name__)
