@@ -2,11 +2,12 @@
 
 
 {% block content %}
-<div class="container bg-white rounded shadow-lg mt-5">
+<div style="margin:auto;max-width:480px" class="shadow bg-white rounded p-5 mt-5">
     <form action="" method="POST">
         {{ form.hidden_tag() }}
-        <fieldset class="form-group">
-            <legend class="border-bottom mb-5">Register</legend>
+        <fieldset class="form-group ">
+            <legend class=" mb-3 text-center ">Register</legend>
+       
             <div class="form-group">
                 {{ form.username.label(class="form-control-label") }}
                 {% if form.username.errors %}
@@ -70,8 +71,8 @@
                 
             </div>
             </div>
-            <div class="form-group">
-                {{ form.submit(class="btn btn-outline-info") }}
+            <div class="form-group mt-3">
+                {{ form.submit(class="btn btn-outline-dark") }}
             </div>
         </fieldset>
     </form>
