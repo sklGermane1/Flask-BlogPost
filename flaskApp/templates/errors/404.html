@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="container">
+    <div class="card bg-white rounded shadow-lg mt-5 mb-5">
+        <div class="card-body">
+            <h4 class="card-title d-flex">404</h4>
+            <h6>This page does not exist. Please go back to the <a href="{{ url_for('main.home') }}">Home Page</a></h6>
+        </div>
+    </div>
+</div>
+{% endblock %}
